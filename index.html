@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+        }
+        .Container{
+            /* background-color: aqua; */
+            padding: 40px 0px;
+        }
+        nav{
+            padding-bottom: 20px;
+            border-bottom: 1px solid blue;
+            display: flex;
+            justify-content: flex-end;
+        }
+        nav button{
+            border: none;
+            padding: 10px 30px;
+            border-radius: 20px;
+            background-color: lightblue;
+            color: blue;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-weight: 600;
+            margin-right: 40px;
+           
+
+        }
+        .main{
+            width: 100vw;
+            /* background-color: red; */
+            height: 10vh;
+            font-weight: 700;
+            font-size: xx-large;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        #user{
+            width: 100%;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .shape{
+            /* background-color: green; */
+            display: flex;
+            justify-content: space-around;
+            width: 50vw;
+            margin: auto;
+            height: 30vh;
+            align-items: center;
+        }
+        .cube{
+            /* background-color: aqua; */
+            width:150px;
+            height: 150px;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .input{
+            margin: auto;
+            width: 50vw;
+            /* height: 5vh; */
+            /* background-color: red; */
+            /* display: flex; */
+        }
+        .input input{
+            padding:10px 6px;
+            margin:auto;
+        }
+        button{
+            padding: 10px 15px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="Container">
+        <nav>
+            <button>Login</button>
+        </nav>
+        <div class="main">
+            <p id="user">Hello
+            </p>
+        </div>
+        <div class="shape">
+            <div class="cube" onclick="Color('red')" id="red">Red</div>
+            <div class="cube" onclick="Color('pink')" id="pink">Black</div>
+            <div class="cube" onclick="Color('blue')" id="blue">White</div>
+            <div class="cube" onclick="Color('maroon')" id="maroon">Green</div>
+        </div>
+        <div class="input">
+            <input type="text" placeholder="Enter Your Name" id="input">
+            <button onclick="Updatename()">Submit</button>
+        </div>
+    </div>
+    <Script>
+        function Updatename(){
+            var input = document.getElementById("input").value;
+            var user =document.getElementById("user");
+            user.innerText= `Hello, ${input}`;
+        }
+        function Color(input){
+        document.getElementById(`${input}`).style=`background-color:${input};color:white`
+        }
+    </Script>
+    
+</body>
+</html>
